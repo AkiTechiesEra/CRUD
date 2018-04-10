@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+#container
+{
+    margin-left:25%;
+    width: 50%;
+    align-content: center;
+    font-family: ' Calibri';
+    font-size: 17px;
+}
+
+
+#buttons
+{
+    margin-left: 25%;
+    font-family: ' Calibri';
+font-size: 17px;
+}
+#loginButton
+{
+    margin-left: 15%;
+    font-family: ' Calibri';
+    font-size: 17px;   
+}
+
+#setLogout
+{
+    margin-left: 90%;
+    font-family: ' Calibri';
+    font-size: 17px;
+}
+
+body{
+    margin: 2% !important;
+    font-family: ' Calibri';
+    font-size: 17px;
+}
+
+label{
+    font-size: 18px;
+    font-family: ' Calibri';
+    color: black;
+    font-size: 17px;
+}
+h1{
+  font-family: ' Calibri';  
+}

@@ -1,0 +1,30 @@
+<logout-ui ></logout-ui>
+<h1>
+    {{formTitle}} COMMENT</h1>
+    
+<div id="container">
+    <form [formGroup]="form" (ngSubmit)="AddComment(form.value)">
+        
+        <div class="form-group">
+            <label>ID</label>
+            <input type="text" class="form-control" formControlName="id" disabled="true" />
+        </div>
+        <div class="form-group">
+            <label>NAME</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Name" />
+        </div>
+        <div class="form-group">
+            <label>EMAIL</label>
+            <input type="text" formControlName="email" class="form-control" placeholder="Email"/>
+        </div>
+        <div class="form-group">
+            <label>BODY</label>
+            <textarea type="text" rows="4" cols="50" formControlName="body" placeholder="Body" class="form-control"></textarea>
+        </div>
+        <div id="buttons">
+            <input type="button" value="Back" style="font-size: 18px" class="btn btn-success" (click)="GoBack()" />
+
+            <input type="submit" [value]="buttonValue" style="font-size: 18px" class="btn btn-success" />
+        </div>
+    </form>
+</div>
