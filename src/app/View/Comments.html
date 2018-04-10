@@ -1,0 +1,48 @@
+
+<logout-ui></logout-ui>
+
+<div class="form-group" style="margin-top: 2%">
+    <label>Search by Email:</label>
+    <input type="text" class="form-control" [(ngModel)]="searchText" style="width: 20%" />
+</div>
+
+<div>
+    <input type="button" value="ADD COMMENTS" class="btn btn-success" (click)="AddCommentsData()" />
+</div>
+<br/>
+<br/>
+
+<div *ngIf="localList">
+
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>BODY</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr abc *ngFor="let data of localList | go:searchText | paginate:{itemsPerPage:10,currentPage:p}">
+
+            <td>{{data.id}}</td>
+            <td>{{data.name }}</td>
+            <td>{{data.email }}</td>
+            <td>{{data.body}}</td>
+            <td>
+                <a class="glyphicon glyphicon-edit" title="Edit" (click)="EditComments(data)"></a>
+                <a class="glyphicon glyphicon-remove" title="Delete" (click)="DeleteComments(data)"></a>
+            </td>
+        </tr>
+
+    </table>
+    <br/>
+    <pagination-controls (pageChange)="p=GetPage($event)" style="font-size: 18px;"></pagination-controls>
+
+</div>
+
+
+<div class="my-container">
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '0px' }"></ngx-loading>
+
+</div>
